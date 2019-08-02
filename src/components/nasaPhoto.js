@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Button, Label, Icon } from "semantic-ui-react";
+import 'semantic-ui-css/semantic.min.css'
 
 import NasaPhotoCard from "./nasaPhotoCard.js";
 
@@ -23,11 +25,19 @@ export default() => {
 
     return (
         <div>
-        <NasaPhotoCard imgUrl={ photo } />
-        
-        <p>
-        { date }
-        </p>
+            <NasaPhotoCard imgUrl={ photo } />
+            
+            <Label pointing display='block'>
+                { date }
+            </Label>
+            <div>
+            <Button as='div' labelPosition='right'>
+                <Button> <Icon name='heart' /> Click</Button>
+                <Label as='a' basic pointing='left'>
+                104
+                </Label>
+            </Button>
+            </div>
         </div>
     )
 }
