@@ -8,6 +8,8 @@ import NasaPhotoCard from "./nasaPhotoCard.js";
 export default() => {
     const [photo, setPhoto] = useState('')
     const [date, setDate] = useState('date')
+    const [likes, setLikes] = useState(0)
+    
 
     useEffect(() => {
         axios
@@ -32,9 +34,9 @@ export default() => {
             </Label>
             <div>
             <Button as='div' labelPosition='right'>
-                <Button> <Icon name='heart' /> Click</Button>
-                <Label as='a' basic pointing='left'>
-                104
+                <Button color='red' onClick={() => setLikes(likes + 1)}> <Icon name='heart' /> Like</Button>
+                <Label basic color='red' as='a' basic pointing='left'>
+                { likes }
                 </Label>
             </Button>
             </div>
