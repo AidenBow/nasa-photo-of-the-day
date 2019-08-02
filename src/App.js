@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
 
+import NasaPhoto from "./components/nasaPhoto.js";
+import SnapshotState from "jest-snapshot/build/State";
+
 function App() {
   return (
     <div className="App">
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
+        Nasa's Photo of the Day!
       </p>
+        <NasaPhoto />
     </div>
   );
 }
